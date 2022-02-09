@@ -2,17 +2,17 @@
 
 namespace MarsRover.utilities;
 
-public static class RobotOperator
+public static class RoverOperator
 {
-    public static void ChangeDirection(this Robot robot, string direction)
+    public static void ChangeDirection(this Rover Rover, string direction)
     {
         switch (direction)
         {
             case "L":
-                robot.CurrentDirection = robot.CurrentDirection.Left();
+                Rover.CurrentDirection = Rover.CurrentDirection.Left();
                 break;
             case "R":
-                robot.CurrentDirection = robot.CurrentDirection.Right();
+                Rover.CurrentDirection = Rover.CurrentDirection.Right();
                 break;
         }
     }
@@ -32,25 +32,25 @@ public static class RobotOperator
         return (Direction)(newDirection % length);
     }
 
-    public static void MoveFront(this Robot robot,Plateau plateau)
+    public static void MoveFront(this Rover Rover,Plateau plateau)
         {
-            switch (robot.CurrentDirection)
+            switch (Rover.CurrentDirection)
             {
                 case Direction.North:
-                    if (plateau.HasMoreNorth(robot.PositionX))
-                        robot.PositionX--;
+                    if (plateau.HasMoreNorth(Rover.PositionX))
+                        Rover.PositionX--;
                     break;
                 case Direction.South:
-                    if (plateau.HasMoreSouth(robot.PositionX))
-                        robot.PositionX++;
+                    if (plateau.HasMoreSouth(Rover.PositionX))
+                        Rover.PositionX++;
                     break;
                 case Direction.East:
-                    if (plateau.HasMoreEast(robot.PositionY))
-                        robot.PositionY++;
+                    if (plateau.HasMoreEast(Rover.PositionY))
+                        Rover.PositionY++;
                     break;
                 case Direction.West:
-                    if (plateau.HasMoreWest(robot.PositionY))
-                        robot.PositionY--;
+                    if (plateau.HasMoreWest(Rover.PositionY))
+                        Rover.PositionY--;
                     break;
             }
         }

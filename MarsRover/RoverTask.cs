@@ -3,9 +3,9 @@ using MarsRover.utilities;
 
 namespace MarsRover;
 
-    public static class RobotTask
+    public static class RoverTask
     {
-        public static string PerformRobotTask(string dimensions, string commandList)
+        public static string PerformRoverTask(string dimensions, string commandList)
         {
             var shape = dimensions.Split('x');
             int n = Convert.ToInt32(shape[0]);
@@ -18,16 +18,16 @@ namespace MarsRover;
 
 
             var plateau = new Plateau(n, m);
-            var robot = new Robot();
+            var Rover = new Rover();
 
             foreach (var command in commandList)
             {
                 if (command == 'F')
-                    robot.MoveFront(plateau);
+                    Rover.MoveFront(plateau);
                 else
-                    robot.ChangeDirection(command.ToString());
+                    Rover.ChangeDirection(command.ToString());
             }
-            return robot.ToString();
+            return Rover.ToString();
         }
     }
 

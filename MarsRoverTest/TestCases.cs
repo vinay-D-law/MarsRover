@@ -11,7 +11,7 @@ public class TestCases
         string dimensions = "5x5";
         string commandList = "FFRFLFLF";
 
-        var actualResult=  RobotTask.PerformRobotTask(dimensions, commandList);
+        var actualResult=  RoverTask.PerformRoverTask(dimensions, commandList);
         var expectedResult = "1,1,West";
         Assert.Equal(expectedResult, actualResult);
     }
@@ -22,7 +22,7 @@ public class TestCases
         string dimensions = "5x5";
         string commandList = "RFFFFFFFFFFFFR";
 
-        var actualResult = RobotTask.PerformRobotTask(dimensions, commandList);
+        var actualResult = RoverTask.PerformRoverTask(dimensions, commandList);
         var expectedResult = "1,5,South";
         Assert.Equal(expectedResult, actualResult);
     }

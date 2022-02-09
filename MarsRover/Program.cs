@@ -7,4 +7,4 @@ using MarsRover;
 var dimensions = Console.ReadLine();
 var commandList = Console.ReadLine();
 
-Console.WriteLine(RobotTask.PerformRobotTask(dimensions ?? "", commandList ?? ""));
+Console.WriteLine(RoverTask.PerformRoverTask(dimensions ?? "", commandList ?? ""));
